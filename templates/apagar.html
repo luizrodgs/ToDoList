@@ -1,0 +1,14 @@
+{% extends "templates.html" %}
+{% block conteudo %}
+    <form action="{{ url_for('delete') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label for="titulodelete">Título da Tarefa a apagar</label>
+                <input type="text" id="titulodelete" name="titulodelete" class="form-control">
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-dark btn-salvar">Salvar</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

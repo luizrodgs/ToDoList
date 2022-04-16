@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ToDoList</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="/lista">Lista de Tarefas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/novo">Adicionar Tarefa</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/editar">Editar Tarefa</a>
+            </li>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/apagar">Apagar Tarefa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
+
+    <div class="container">
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+      <div class="page-header">
+          <h1 class="text-center m-5">{{ titulo }}</h1>
+      </div>
+
+        {% block conteudo %} {% endblock %}
+
+      </div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-dark text-white fixed-bottom">
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Sobre o projeto
+          </h6>
+          <p>
+            Iniciado em 15/04/2022 com a última atualização no dia
+              16/04/2022, a proposta é ser um projeto de exercício e aprimoramento em CRUD.
+              As tecnologias utilizadas são Python, Flask e Bootstrap.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Links Úteis
+          </h6>
+          <p>
+            <a href="https://github.com/luizrodgs" class="text-reset">GitHub (Projeto)</a>
+          </p>
+          <p>
+            <a href="https://www.python.org/" class="text-reset">Python</a>
+          </p>
+            <p>
+            <a href="https://flask.palletsprojects.com/en/2.1.x/" class="text-reset">Flask</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Redes Sociais
+          </h6>
+            <p>
+            <a href="https://github.com/luizrodgs" class="text-reset">GitHub (Desenvolvedor)</a>
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/luiz-c-rodrigues-moura/" class="text-reset">LinkedIn</a>
+          </p>
+
+          <p>
+            <a href="https://www.instagram.com/luizrodgs/" class="text-reset">Instagram</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Contato
+          </h6>
+            <p><i class="fas fa-home me-3"></i>Luiz Carlos Rodrigues Moura</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+              <a href="mailto:luizrodgs1@gmail.com" class="text-reset">luizrodgs1@gmail.com</a>
+          </p>
+            <p>
+                <i class="fas fa-envelope me-3"></i>
+              <a href="tel:+5591984239458" class="text-reset">   +55 91 9 8423-9458</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-13 pt-3 mb-10" style="background-color: rgba(0, 0, 0, 0.05);">
+      <p class="fs-60">© 2022 Copyright: Luiz Rodrigues - Desenvolvedor de Software</p>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

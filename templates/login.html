@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+      <div class="page-header">
+          <h1 class="text-center m-3 pt-3">{{ titulo }}</h1>
+      </div>
+
+        <h1>Login - Insira suas credenciais</h1>
+        <form method="POST" action="{{  url_for('autenticar')  }}">
+            <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
+            <p><label>Nome de usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
+            <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
+            <p><button class="btn btn-dark" type="submit">Entrar</button></p>
+        </form>
+</div>
+</body>
+</html>
