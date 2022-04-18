@@ -53,7 +53,7 @@
 <h2 align="center">Autor</h2>
 
 [<img src="https://avatars.githubusercontent.com/u/101483219?v=4" width=115><br><sub></sub>](https://github.com/luizrodgs)
-<p><a href="https://github.com/luizrodgs">GitHub </a> <a href="https://www.linkedin.com/in/luiz-c-rodrigues-moura/"> LinkedIn</a></p>
+<p><a href="https://github.com/luizrodgs">GitHub </a> <a href="https://www.linkedin.com/in/luizrodgs"> LinkedIn</a></p>
 
 <br>
 
