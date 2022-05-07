@@ -1,22 +1,32 @@
 {% extends "templates.html" %}
 {% block conteudo %}
-    <form action="{{ url_for('main.criar') }}" method="post">
-        <fieldset>
-            <div class="form-group">
-                <label for="titulo">Título</label>
-                <input type="text" id="titulo" name="titulo" class="form-control">
-            </div>
-            <div class="form-group mt-3">
-                <label for="descricao">Descrição</label>
-                <input type="text" id="descricao" name="descricao" class="form-control">
-            </div>
-            <div class="form-group mt-3">
-                <label for="data">Data (DDxMMxAAAA)</label>
-                <input type="text" id="data" name="data" class="form-control">
-            </div>
-            <div class="mt-3">
-                <button type="submit" class="btn btn-dark btn-salvar">Salvar</button>
-            </div>
-        </fieldset>
-    </form>
+<form action="{{ url_for('main.criar') }}" method="post" enctype="multipart/form-data">
+    <figure class="thumb col-md-4">
+        <img class="img-responsive" style="width: 300px;"
+            src="{{ url_for('main.imagem', nome_arquivo='capa_padrao.jpg') }}" <figcaption>
+        <label class="fileContainer">
+            Mudar Capa
+            <input type="file" name="arquivo" accept=".jpg">
+        </label>
+        </figcaption>
+    </figure>
+    <fieldset>
+        <div class="form-group">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" class="form-control">
+        </div>
+        <div class="form-group mt-3">
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" name="descricao" class="form-control">
+        </div>
+        <div class="form-group mt-3">
+            <label for="data">Data (AAAA-MM-DD)</label>
+            <input type="text" id="data" name="data" class="form-control">
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-dark btn-salvar">Salvar</button>
+            <a class="btn btn-dark" href="{{ url_for('main.lista') }}">Voltar</a>
+        </div>
+    </fieldset>
+</form>
 {% endblock %}

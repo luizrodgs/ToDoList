@@ -1,66 +1,102 @@
-from flask import Blueprint, Flask, render_template, request, redirect, session, flash, url_for
-from db import Tarefa, lista_de_tarefas
+from flask import Blueprint, render_template, request, redirect, session, flash, url_for, send_from_directory, current_app
+from dao import TarefaDao, UsuarioDao
+from models import Tarefa, Usuario
+from extended import db
+import os
+import time
 
 main = Blueprint('main', __name__)
 
-@main.get('/')
-def index():
-    return render_template('index.html', titulo='TDL - ToDoList')
+tarefa_dao = TarefaDao(db)
+usuario_dao = UsuarioDao(db)
 
-@main.get('/lista')
+
+@main.get('/')
 def lista():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('user.login', proxima=url_for('main.lista')))
-    return render_template('lista.html', titulo='Lista de Tarefas', lista_de_tarefas=lista_de_tarefas)
+    lista_de_tarefas = tarefa_dao.listar()
+    return render_template('index.html', titulo='Lista de Tarefas', lista_de_tarefas=lista_de_tarefas)
+
 
 @main.get('/novo')
 def novo():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('user.login', proxima=url_for('main.novo')))
-    return render_template('novo.html', titulo='Adicionar Nova Tarefa')
+    return render_template('novo.html', titulo='Adicionar Tarefa')
+
+
+@main.get('/sobre')
+def sobre():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('user.login', proxima=url_for('main.novo')))
+    return render_template('sobre.html', titulo='Sobre o Projeto')
+
 
 @main.post('/criar')
 def criar():
     titulo = request.form['titulo']
     descricao = request.form['descricao']
     data = request.form['data']
-    nova_tarefa = Tarefa(titulo, descricao, data)
-    lista_de_tarefas.append(nova_tarefa)
+    tarefa = Tarefa(titulo, descricao, data)
+    tarefa_dao.salvar(tarefa)
+
+    arquivo = request.files['arquivo']
+    upload_path = current_app.config['UPLOAD_PATH']
+    timestamp = time.time()
+    arquivo.save(f'{upload_path}/capa{tarefa.id}-{timestamp}.jpg')
     flash('Tarefa adicionada com sucesso!')
     return redirect(url_for('main.lista'))
 
-@main.get('/editar')
-def editar():
+
+@main.get('/editar/<int:id>')
+def editar(id):
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('user.login', proxima=url_for('main.editar')))
-    return render_template('editar.html', titulo='Editar Tarefa')
+    tarefa = tarefa_dao.busca_por_id(id)
+    nome_imagem = recupera_imagem(id)
+    return render_template('editar.html', titulo='Editar Tarefa', tarefa=tarefa, capa_tarefa=nome_imagem or 'capa.jpg')
 
-@main.post('/edit')
-def edit():
-    titulo_a_editar = request.form['tituloedit']
-    novo_titulo = request.form['novotitulo']
-    nova_descricao = request.form['novadescricao']
-    nova_data = request.form['novadata']
-    for tarefa in lista_de_tarefas:
-        if tarefa.titulo == titulo_a_editar:
-            tarefa.titulo = novo_titulo
-            tarefa.descricao = nova_descricao
-            tarefa.data = nova_data
-    flash('Tarefa editada com sucesso!')
+
+def recupera_imagem(id):
+    for nome_arquivo in os.listdir(current_app.config['UPLOAD_PATH']):
+        if f'capa{id}' in nome_arquivo:
+            return nome_arquivo
+
+
+def deleta_arquivo(id):
+    arquivo = recupera_imagem(id)
+    try:
+        os.remove(os.path.join(current_app.config['UPLOAD_PATH'], arquivo))
+    except:
+        pass
+
+
+@main.post('/salvar')
+def salvar():
+    titulo = request.form['titulo']
+    descricao = request.form['descricao']
+    data = request.form['data']
+    tarefa = Tarefa(titulo, descricao, data, id=request.form['id'])
+    arquivo = request.files['arquivo']
+    upload_path = current_app.config['UPLOAD_PATH']
+    timestamp = time.time()
+    deleta_arquivo(tarefa.id)
+    arquivo.save(f'{upload_path}/capa{tarefa.id}-{timestamp}.jpg')
+    tarefa_dao.salvar(tarefa)
+
+    flash('Tarefa salva com sucesso!')
     return redirect(url_for('main.lista'))
 
-@main.get('/apagar')
-def apagar():
-    if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect(url_for('user.login', proxima=url_for('main.apagar')))
-    return render_template('apagar.html', titulo='Apagar Tarefa')
 
-@main.post('/delete')
-def delete():
-    tarefa_a_deletar = request.form['titulodelete']
-    for tarefa in lista_de_tarefas:
-        if tarefa.titulo == tarefa_a_deletar:
-            lista_de_tarefas.remove(tarefa)
-            del tarefa
+@main.get('/delete/<int:id>')
+def delete(id):
+    tarefa_dao.deletar(id)
     flash('Tarefa apagada com sucesso!')
     return redirect(url_for('main.lista'))
+
+
+@main.get('/uploads/<nome_arquivo>')
+def imagem(nome_arquivo):
+    print(nome_arquivo)
+    return send_from_directory('uploads', nome_arquivo)
