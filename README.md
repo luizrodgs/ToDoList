@@ -27,26 +27,24 @@
     <br>
     <h2>🗺 Como usar 🗺</h2>
     <p>Como o projeto não está hospedado online, é necessário fazer o download no mesmo para a execução em um ambiente VENV. Um arquivo será disponibilizado em breve no repositório para criação automatizada do banco de dados.</p>
-    <p>Após baixar o projeto e abri-lo na sua IDE ou editor de código de preferência, execute o comando "flask run" (sem as aspas) via terminal diretamente do diretório do projeto. Em seguida, basta abrir o link disponibilizado no próprio terminal para acessar a aplicação. Login padrão: admin / admin.</p>
+    <p>Após baixar o projeto e abri-lo na sua IDE ou editor de código de preferência, execute o comando "flask run" (sem as aspas) via terminal diretamente do diretório do projeto. Em seguida, basta abrir o link disponibilizado no próprio terminal para acessar a aplicação.</p>
 
 
-![Index](https://user-images.githubusercontent.com/101483219/163696458-c77c779e-928f-4a26-8335-c20867b67e52.png)
-    <p>1 - Na Página Inicial, o usuário deve clicar no botão para acessar a página de login, e consequentemente ter acesso ao sistema.</p>
+![ToDoList01 - Login](https://user-images.githubusercontent.com/101483219/163696462-9b58a861-b489-4ac4-a9f3-6eb02e2aa882.png)
+    <p>1 - Na Página de Login, o usuário deve inserir suas credenciais previamente criadas pelo desenvolvedor para ter acesso ao sistema. Login padrão: admin / admin</p>
 
-![ToDoList02 - Login](https://user-images.githubusercontent.com/101483219/163696462-9b58a861-b489-4ac4-a9f3-6eb02e2aa882.png)
-    <p>2 - Na Página de Login, o usuário deve inserir suas credenciais previamente criadas pelo desenvolvedor para ter acesso ao sistema.</p>
+![ToDoList02 - Lista](https://user-images.githubusercontent.com/101483219/167235284-5e090c31-ffa0-4068-9958-c43bcbfd4290.png)
+    <p>2 - Na Página Lista de Tarefas, o usuário pode conferir todas as Tarefas adicionadas.</p>
 
-![ToDoList03 - Create](https://user-images.githubusercontent.com/101483219/163696464-24304004-0594-48e0-9fc2-2984842dfa68.png)
+![ToDoList04 - Adicionar](https://user-images.githubusercontent.com/101483219/167235290-3bde0107-cba9-4fc7-870c-cecfc7e8298f.png)
     <p>3 - Na Página de Adicionar Tarefa, o usuário deve inserir o Título, Descrição e Data desejados para a Tarefa em questão. Após salvar os dados, a Tarefa será incluída na lista e o usuário redirecionado à página de Listagem.</p>
 
-![ToDoList04 - Read](https://user-images.githubusercontent.com/101483219/163696465-43a7114d-7dff-442c-acaa-282cf5cbc9ed.png)
-    <p>4 - Na Página Lista de Tarefas, o usuário pode conferir todas as Tarefas adicionadas.</p>
+![ToDoList05 - Editar](https://user-images.githubusercontent.com/101483219/167235299-70fe94da-fbb2-4f23-900b-ffefd5533317.png)
+    <p>4 - Ao clicar em Editar Tarefa, o usuário deve inserir os novos atributos para a tarefa selecionada. Após salvar os dados, a Tarefa será editada na lista e o usuário redirecionado à página de Listagem.</p>
 
-![ToDoList05 - Update](https://user-images.githubusercontent.com/101483219/163696466-c5131baa-ad6e-4232-b5c4-24d6289a6636.png)
-    <p>5 - Na Página Editar Tarefa, o usuário deve referir pelo Título a Tarefa que deseja editar, e então, inserir os novos atributos para essa. Após salvar os dados, a Tarefa será editad na lista e o usuário redirecionado à página de Listagem.</p>
+<br>
 
-![ToDoList06 - Delete](https://user-images.githubusercontent.com/101483219/163696469-5b23da8b-cc34-475b-882c-4efb230fc28b.png)
-    <p>6 - Na Página Apagar Tarefa, o usuário deve referir pelo Título a Tarefa que deseja apagar. Após salvar os dados, a Tarefa será excluída da lista e o usuário redirecionado à página de Listagem.</p>
+<p>5 - Ao clicar em Apagar Tarefa, a Tarefa será excluída da lista e o usuário redirecionado à página de Listagem.</p>
 
 <br>
 
@@ -70,9 +68,9 @@
 <br>
 
 <h4 align="center">
-    🚧 Software em fase Alfa - Desenvolvimento em andamento 🚧
+    🚧 Software em fase Beta - Desenvolvimento em andamento 🚧
 </h4>
-<p align="center">Início do projeto: 15/04/2022 - Versão Atual: 1.0 (16/04/2022)</p>
+<p align="center">Início do projeto: 15/04/2022 - Versão Atual: 2.0 (06/05/2022)</p>
 <br>
 
 </div>
