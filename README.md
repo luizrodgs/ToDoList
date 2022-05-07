@@ -2,12 +2,12 @@
 
 <div align="center">
 
-![Banner](https://user-images.githubusercontent.com/101483219/163696287-ac3821b7-dde4-4fba-8c76-7b7288833a69.png)
+![Banner](https://user-images.githubusercontent.com/101483219/167234540-9539ee85-3be0-4539-b11b-4c92460a8cc1.png)
 
 <br>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Status-Vers%C3%A3o%20Alpha%20--%20em%20desenvolvimento-green"> <img src="https://img.shields.io/badge/Data%20de%20in%C3%ADcio%20do%20projeto%3A-15%2F04%2F2022-green"> <img src="https://img.shields.io/badge/Data%20da%20%C3%BAltima%20atualiza%C3%A7%C3%A3o%3A-16%2F04%2F2022-green">
+<img src="https://img.shields.io/badge/Status-Vers%C3%A3o%20Beta%20--%20Em%20Desenvolvimento-green"> <img src="https://img.shields.io/badge/Data%20de%20In%C3%ADcio%20do%20Projeto-15%2F04%2F2022-green"> <img src="https://img.shields.io/badge/Data%20da%20%C3%BAltima%20atualiza%C3%A7%C3%A3o-06%2F05%2F2022-green">
 </p>
 
 <br>
@@ -17,17 +17,17 @@
         <p>Este projeto foi desenvolvido com o intuito de auxiliar no processo de aprimoramento do conhecimento em CRUD, bem como nas tecnologias utilizadas no desenvolvimento. Trata-se de um programa de lista de tarefas com diversas funcionalidades e utilidades que serão melhor explicadas adiante.</p>
     <br>
     <h2>🖥 Tecnologias 🖥</h2>
-        <p>O projeto foi desenvolvido utilizando a linguagem de programação Python com Orientação a Objetos e os frameworks Flask e Bootstrap.</p>
+        <p>O projeto foi desenvolvido utilizando a linguagem de programação Python Orientada a Objetos e uma leve camada de JavaScript com JQuery, os frameworks Flask e Bootstrap, além de MySQL para o banco de datos.</p>
     <br>
     <h2>🛠 Funcionalidades 🛠</h2>
-        <p>O programa possui autenticação de usuário, garantindo maior segurança no acesso aos dados inseridos na lista. Destaca-se por possuir as 4 operações básicas CRUD, permitindo ao usuário Criar, Ler, Atualizar e Deletar tarefas de forma simples e intuitiva.</p>
+        <p>O programa possui autenticação de usuário, garantindo maior segurança no acesso aos dados inseridos na lista. Destaca-se por possuir as 4 operações básicas CRUD, permitindo ao usuário Criar, Ler, Atualizar e Deletar tarefas de forma simples e intuitiva. Possui a opção de fazer o uploads de imagens para associa-las a uma determinada tarefa.</p>
     <br>
     <h2>🖱 Pré-requisitos 🖱</h2>
-        <p>click 8.1.2 / Flask 2.1.1 / importlib-metadata 4.11.3 / itsdangerous 2.1.2 / Jinja2 3.1.1 / MarkupSafe 2.1.1 / Werkzeug2.1.1 / zipp 3.8.0</p>
+        <p>autopep8==1.6.0 / click==8.1.2 / Flask==2.1.1 / Flask-MySQLdb==0.2.0 / importlib-metadata==4.11.3 / itsdangerous==2.1.2 / Jinja2==3.1.1 / MarkupSafe==2.1.1 / mysqlclient==2.1.0 / pycodestyle==2.8.0 / toml==0.10.2 / Werkzeug==2.1.1 / zipp==3.8.0</p>
     <br>
     <h2>🗺 Como usar 🗺</h2>
-    <p>Como o projeto não está hospedado online, é necessário fazer o download no mesmo para a execução em um ambiente VENV. Por ainda não contar com Banco de Dados implementado, as alterações feitas diretamente na interface do programa em execução serão perdidas ao reiniciar a aplicação. Para fazer mudanças permanentes, altere diretamente no código fonte.</p>
-    <p>Após baixar o projeto e abri-lo na sua IDE ou editor de código de preferência, execute o comando "flask run" (sem as aspas) via terminal diretamente do diretório do projeto. O terminal deverá então, executar o arquivo "app.py".</p>
+    <p>Como o projeto não está hospedado online, é necessário fazer o download no mesmo para a execução em um ambiente VENV. Um arquivo será disponibilizado em breve no repositório para criação automatizada do banco de dados.</p>
+    <p>Após baixar o projeto e abri-lo na sua IDE ou editor de código de preferência, execute o comando "flask run" (sem as aspas) via terminal diretamente do diretório do projeto. Em seguida, basta abrir o link disponibilizado no próprio terminal para acessar a aplicação. Login padrão: admin / admin.</p>
 
 
 ![Index](https://user-images.githubusercontent.com/101483219/163696458-c77c779e-928f-4a26-8335-c20867b67e52.png)
