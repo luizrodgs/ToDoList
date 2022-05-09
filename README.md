@@ -58,7 +58,7 @@
 <h2>
     <h2 align="center">🤝 Colaboradores 🤝</h2>
     <div>
-    <p align="center">Agradeço pela colaboração no projeto dos amigos desenvolvedores:</p>
+    <p align="center">Agradeço pela colaboração no projeto:</p>
     <a href="https://www.linkedin.com/in/moura-dev/">Luiz Guilherme Junior</a>
     <br>
     <a href="https://www.linkedin.com/in/ivan-noleto-0aa2a0205/">Ivan Noleto</a>
