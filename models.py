@@ -5,6 +5,7 @@ class Tarefa:
         self.descricao = descricao
         self.data = data
 
+
 class Usuario:
     def __init__(self, id, nome, senha):
         self.id = id
