@@ -5,11 +5,11 @@
 ![Banner](https://user-images.githubusercontent.com/101483219/167234540-9539ee85-3be0-4539-b11b-4c92460a8cc1.png)
 
 <br>
-
-<p align="center">
-<img src="https://img.shields.io/badge/Status-Vers%C3%A3o%20Beta%20--%20Em%20Desenvolvimento-green"> <img src="https://img.shields.io/badge/Data%20de%20In%C3%ADcio%20do%20Projeto-15%2F04%2F2022-green"> <img src="https://img.shields.io/badge/Data%20da%20%C3%BAltima%20atualiza%C3%A7%C3%A3o-06%2F05%2F2022-green">
-</p>
-
+<h4 align="center">
+    🚧 Software descontinuado
+</h4>
+<p align="center">Início do projeto: 15/04/2022 - Última atualização: 06/05/2022</p>
+<br>
 <br>
 
 <hp align="center">
@@ -68,9 +68,9 @@
 <br>
 
 <h4 align="center">
-    🚧 Software em fase Beta - Desenvolvimento em andamento 🚧
+    🚧 Software descontinuado
 </h4>
-<p align="center">Início do projeto: 15/04/2022 - Versão Atual: 2.0 (06/05/2022)</p>
+<p align="center">Início do projeto: 15/04/2022 - Última atualização: 06/05/2022</p>
 <br>
 
 </div>
